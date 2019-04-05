@@ -40,6 +40,15 @@
 #include <semaphore.h>
 #include <sched.h>
 
+#define NUM_CPUS	(4)
+#define NUM_BYTES 	(2048)
+
+typedef struct
+{
+	int threadIdx;
+	unsigned long long sequencePeriods;
+} threadParams_t;
+
 /**** Global variables (shared by all threads) ****/
 
 // USB device object
@@ -48,8 +57,6 @@ PINGUSB_RECV dev;
 pthread_mutex_t pingusbMutex;
 pthread_mutexattr_t pingusbMutexAttr;
 
-
-#define NUM_BYTES 2048
 
 /**** Function main ****
  *
@@ -64,6 +71,12 @@ int main(int argc, char **argv) {
 
 	int i, rc, numRead, col = 0, loopCount = 0;
 	int numBytes = 0;
+
+	pthread_t pingusbPollThread;
+	pthread_attr_t pingusbPollThreadParams;
+	threadParams_t pingusbPollThreadParams;
+
+	cpu_set_t cpuAll;
 
 
 	// Process command-line options
@@ -98,7 +111,12 @@ int main(int argc, char **argv) {
 		return -2;
 	}
 
-
+	// Initialize CPU affinity variable
+	CPU_ZERO(&cpuAll);
+	for(i = 0; i < NUM_CPUS; i++) {
+		CPU_SET(i, &cpuAll);
+	}
+	printf("Configured to execute on %d CPUs\n", CPU_COUNT(&cpuAll));
 
 
 
