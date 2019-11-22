@@ -28,6 +28,9 @@ constants.Rp = 6356752.314245;      % Earth's polar radius (meters)
 constants.e = 0.0818191908425;      % Eccentricity
 constants.f = 1 / 298.257223563;    % Flattening
 
+
+constants.gravity = 9.79193;
+
 %------------------------------------------------------------------------------
 %% Starting Latitude and Longitude of Prescott Airport: Defining the Tangential frame
 %------------------------------------------------------------------------------
