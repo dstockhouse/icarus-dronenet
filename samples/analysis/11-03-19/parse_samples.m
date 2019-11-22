@@ -33,7 +33,7 @@ gps.index = 1:length(gps.t_sec);
 %% Get values from CSV files
 
 imu.magneto_b = raw_imu_csv(:,2:4);
-imu.magneto_b = imu.magneto_b(imu.index);
+imu.magneto_b = imu.magneto_b(imu.index,:)';
 
 imu.f_b__i_b_tilde = raw_imu_csv(:,5:7);
 imu.f_b__i_b_tilde = imu.f_b__i_b_tilde(imu.index,:)';
@@ -77,4 +77,5 @@ gps.delta_time = raw_gps_csv(:,16);
 gps.delta_time = gps.delta_time(gps.index)';
 
 
-
+%% Save data to .mat file
+save('samples_11-03-2019', 'imu', 'gps');
