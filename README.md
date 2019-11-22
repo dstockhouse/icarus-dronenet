@@ -5,7 +5,21 @@ the ICARUS group at Embry-Riddle Aeronautical University in Prescott, AZ.
 
 ## Instructions
 
-To use this software in the ICARUS configuration, we needed to make some
+```
+git clone https://github.com/dstockhouse/icarus-dronenet.git
+cd icarus-dronenet
+make
+```
+
+The `make` program should produce the executable `vn200rawsimpletest`. To
+execute:
+
+```
+sudo ./vn200rawsimpletest
+```
+
+### Autostart
+To autostart this software in the ICARUS configuration, we needed to make some
 additional modifications for the host pi.
 * Add `cd /home/pi/icarus-dronenet && ./test` to `/etc/rc.local`
 * Add cron job to update the system clock every minute so that it properly
