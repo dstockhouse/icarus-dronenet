@@ -1,0 +1,40 @@
+Descriptions of the saved test files
+
+
+Lidar and Bruder test:
+
+First test with the VN200 performed. 31 minute duration.
+
+Test starts stationary 1 meter beneath the lidar tripod. 3D GPS fix is acquired
+at approximately line 1200.
+
+Test fixture moved to Dr. Bruder's truck at approximately line 60000, at
+approximately 18 minutes into the test. He then drives around for a bit.
+
+
+Bucholz:
+
+Second test. 55 minute duration.
+
+3D GPS fix acquired at approximately line 1200.
+
+Test fixture attached to Jonathon's car while he drives around in view of radar
+and camera. Travis flies drone in several approaches to the lidar mounted to
+Jonathan's car. 
+
+Should be able to correlate this data with Jonathan's lidar data, which was
+recording for most of the duration of the drive.
+
+
+Drive home:
+
+Final test. 50 minute duration.
+
+Attached fixture to Jonathan's car during the drive from the test site back to
+campus, including many bumpy roads and some highway-speed travel.
+
+3D GPS fix acquired at approximately line 1300.
+
+Will be able to correlate this data with Jonathan's lidar data, which was
+recording for the entire duration of the drive.
+

@@ -3,8 +3,8 @@ clear;
 clc;
 
 % Load raw data
-raw_imu_csv = readmatrix('data_imu.log');
-raw_gps_csv = readmatrix('data_gpe.log');
+raw_imu_csv = readmatrix('data_imu_10-19.log');
+raw_gps_csv = readmatrix('data_gpe_10-19.log');
 
 imu.num_samples = length(raw_imu_csv);
 gps.num_samples = length(raw_gps_csv);
@@ -78,4 +78,4 @@ gps.delta_time = gps.delta_time(gps.index)';
 
 
 %% Save data to .mat file
-save('samples_11-03-2019', 'imu', 'gps');
+save('samples_10-19', 'imu', 'gps');
